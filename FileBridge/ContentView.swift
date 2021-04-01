@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            Text("Welcome to FileBridge")
+                .font(.largeTitle)
+                .padding()
+            VStack (alignment: .center, spacing: 20) {
+                Text("You can close this app")
+                Text("Open your device in iTunes and navigate to File Sharing")
+                    .multilineTextAlignment(.center)
+            }
+            .font(.title2)
             .padding()
+        }
     }
 }
 
