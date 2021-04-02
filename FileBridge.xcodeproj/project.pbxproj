@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0748692617CB9500AFAE79 /* InitUtils.swift */; };
 		7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B626151570003FAD1F /* FileBridgeApp.swift */; };
 		7CBA96B926151570003FAD1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B826151570003FAD1F /* ContentView.swift */; };
 		7CBA96BB26151571003FAD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BA26151571003FAD1F /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C0748692617CB9500AFAE79 /* InitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUtils.swift; sourceTree = "<group>"; };
 		7CBA96B326151570003FAD1F /* FileBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBA96B626151570003FAD1F /* FileBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBridgeApp.swift; sourceTree = "<group>"; };
 		7CBA96B826151570003FAD1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0748672617CB5200AFAE79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CBA96B826151570003FAD1F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C0748682617CB6900AFAE79 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7C0748692617CB9500AFAE79 /* InitUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7CBA96AA26151570003FAD1F = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				7CBA96B626151570003FAD1F /* FileBridgeApp.swift */,
-				7CBA96B826151570003FAD1F /* ContentView.swift */,
+				7C0748682617CB6900AFAE79 /* Utilities */,
+				7C0748672617CB5200AFAE79 /* Views */,
 				7CBA96BA26151571003FAD1F /* Assets.xcassets */,
 				7CBA96BF26151571003FAD1F /* Info.plist */,
 				7CBA96BC26151571003FAD1F /* Preview Content */,
@@ -261,6 +280,7 @@
 			files = (
 				7CBA96B926151570003FAD1F /* ContentView.swift in Sources */,
 				7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */,
+				7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FileBridge/Preview Content\"";
 				DEVELOPMENT_TEAM = 8A74DBQ6S3;
 				ENABLE_PREVIEWS = YES;
@@ -427,10 +448,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kingbri.FileBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -440,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FileBridge/Preview Content\"";
 				DEVELOPMENT_TEAM = 8A74DBQ6S3;
 				ENABLE_PREVIEWS = YES;
@@ -449,10 +473,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kingbri.FileBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

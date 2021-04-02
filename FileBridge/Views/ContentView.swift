@@ -11,16 +11,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Welcome to FileBridge")
-                .font(.largeTitle)
+                .font(.title)
                 .padding()
             VStack (alignment: .center, spacing: 20) {
                 Text("You can close this app")
                 Text("Open your device in iTunes and navigate to File Sharing")
-                    .multilineTextAlignment(.center)
             }
-            .font(.title2)
+            .font(.subheadline)
             .padding()
         }
+        .multilineTextAlignment(.center)
+        .onAppear(perform: checkFirstRun)
     }
 }
 
