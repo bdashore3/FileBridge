@@ -114,7 +114,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# Preview content
-FileBridge/Preview\ Content/
-
 # End of https://www.toptal.com/developers/gitignore/api/macos,swift
