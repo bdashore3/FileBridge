@@ -21,7 +21,6 @@ struct ContentView: View {
             .padding()
         }
         .multilineTextAlignment(.center)
-        .onAppear(perform: checkFirstRun)
     }
 }
 

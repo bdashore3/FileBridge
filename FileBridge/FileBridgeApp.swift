@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct FileBridgeApp: App {
+    init() {
+        let defaults = UserDefaults.standard;
+        
+        checkFirstRun(defaults: defaults)
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

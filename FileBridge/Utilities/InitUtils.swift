@@ -15,9 +15,7 @@ public func getDocumentsDirectory() -> URL {
 }
 
 // If the app is opened for the first time
-public func checkFirstRun() {
-    let defaults = UserDefaults.standard
-
+public func checkFirstRun(defaults: UserDefaults) {
     if !defaults.bool(forKey: "appLaunchedOnce") {
         addEmptyText()
 
