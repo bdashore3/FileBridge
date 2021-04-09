@@ -24,7 +24,7 @@ public func checkFirstRun(defaults: UserDefaults) {
 }
 
 // Add an empty text document to show the folder
-func addEmptyText() {
+public func addEmptyText() {
     let str = "Do not delete this file!"
     let url = getDocumentsDirectory().appendingPathComponent("doNotDelete.txt")
     
