@@ -32,11 +32,11 @@ A blank text file will be automatically added in a future app version which auto
 
 ## Planned features
 Here are features that I have planned for future releases (these are also in the issues)
-- Automatically create a text file
 - Add informational buttons so the app is easier to use
 - Add the option to create a "virtual filesystem"
 	- This copies the existing iPhone files and puts them inside the FileBridge folder
 	- The FileBridge folder is now considered the "root directory" for a user's files
+- Add a how-to guide for transferring various types of files and how to optimize the iDevice for easy FileBridge transfer
 
 ## Contribution
 If you have issues with the app:
