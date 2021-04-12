@@ -17,7 +17,7 @@ struct FileBridgeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
