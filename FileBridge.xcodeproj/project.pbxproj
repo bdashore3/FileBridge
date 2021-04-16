@@ -10,6 +10,7 @@
 		7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0748692617CB9500AFAE79 /* InitUtils.swift */; };
 		7CB36AB62624F892002D2D48 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AB52624F892002D2D48 /* MainView.swift */; };
 		7CB36AB82624F8B2002D2D48 /* PseudoFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AB72624F8B2002D2D48 /* PseudoFsView.swift */; };
+		7CB36AF12628DFAB002D2D48 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AF02628DFAB002D2D48 /* FileUtils.swift */; };
 		7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B626151570003FAD1F /* FileBridgeApp.swift */; };
 		7CBA96B926151570003FAD1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B826151570003FAD1F /* ContentView.swift */; };
 		7CBA96BB26151571003FAD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BA26151571003FAD1F /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		7C0748692617CB9500AFAE79 /* InitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUtils.swift; sourceTree = "<group>"; };
 		7CB36AB52624F892002D2D48 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7CB36AB72624F8B2002D2D48 /* PseudoFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PseudoFsView.swift; sourceTree = "<group>"; };
+		7CB36AF02628DFAB002D2D48 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		7CBA96B326151570003FAD1F /* FileBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBA96B626151570003FAD1F /* FileBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBridgeApp.swift; sourceTree = "<group>"; };
 		7CBA96B826151570003FAD1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0748692617CB9500AFAE79 /* InitUtils.swift */,
+				7CB36AF02628DFAB002D2D48 /* FileUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				7CBA96B926151570003FAD1F /* ContentView.swift in Sources */,
 				7CB36AB62624F892002D2D48 /* MainView.swift in Sources */,
 				7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */,
+				7CB36AF12628DFAB002D2D48 /* FileUtils.swift in Sources */,
 				7CB36AB82624F8B2002D2D48 /* PseudoFsView.swift in Sources */,
 				7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */,
 			);

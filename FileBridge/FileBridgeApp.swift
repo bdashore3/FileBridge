@@ -11,8 +11,8 @@ import SwiftUI
 struct FileBridgeApp: App {
     init() {
         let defaults = UserDefaults.standard;
-        
-        checkFirstRun(defaults: defaults)
+
+        InitUtils().checkFirstRun(defaults: defaults)
     }
     
     var body: some Scene {
