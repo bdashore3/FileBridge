@@ -34,7 +34,7 @@ struct ContentView: View {
             VStack (spacing: 15) {
                 Text("Missing the folder in files? Click the button.")
                 Button {
-                    addEmptyText()
+                    InitUtils().addEmptyText()
                     
                     showAlert = true
                 } label: {
