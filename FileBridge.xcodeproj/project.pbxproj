@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0748692617CB9500AFAE79 /* InitUtils.swift */; };
+		7C2A5025262E71E10004842C /* ProgressOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A5024262E71E10004842C /* ProgressOverlayView.swift */; };
 		7CB36AB62624F892002D2D48 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AB52624F892002D2D48 /* MainView.swift */; };
 		7CB36AB82624F8B2002D2D48 /* PseudoFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AB72624F8B2002D2D48 /* PseudoFsView.swift */; };
 		7CB36AF12628DFAB002D2D48 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AF02628DFAB002D2D48 /* FileUtils.swift */; };
+		7CB36AF7262A9ECB002D2D48 /* PseudoFsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AF6262A9ECB002D2D48 /* PseudoFsUtils.swift */; };
+		7CB36AF9262B3F40002D2D48 /* StringRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB36AF8262B3F40002D2D48 /* StringRenderer.swift */; };
 		7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B626151570003FAD1F /* FileBridgeApp.swift */; };
 		7CBA96B926151570003FAD1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96B826151570003FAD1F /* ContentView.swift */; };
 		7CBA96BB26151571003FAD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BA26151571003FAD1F /* Assets.xcassets */; };
@@ -38,9 +41,12 @@
 
 /* Begin PBXFileReference section */
 		7C0748692617CB9500AFAE79 /* InitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUtils.swift; sourceTree = "<group>"; };
+		7C2A5024262E71E10004842C /* ProgressOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressOverlayView.swift; sourceTree = "<group>"; };
 		7CB36AB52624F892002D2D48 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7CB36AB72624F8B2002D2D48 /* PseudoFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PseudoFsView.swift; sourceTree = "<group>"; };
 		7CB36AF02628DFAB002D2D48 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		7CB36AF6262A9ECB002D2D48 /* PseudoFsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PseudoFsUtils.swift; sourceTree = "<group>"; };
+		7CB36AF8262B3F40002D2D48 /* StringRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRenderer.swift; sourceTree = "<group>"; };
 		7CBA96B326151570003FAD1F /* FileBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBA96B626151570003FAD1F /* FileBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBridgeApp.swift; sourceTree = "<group>"; };
 		7CBA96B826151570003FAD1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,17 +92,20 @@
 				7CBA96B826151570003FAD1F /* ContentView.swift */,
 				7CB36AB52624F892002D2D48 /* MainView.swift */,
 				7CB36AB72624F8B2002D2D48 /* PseudoFsView.swift */,
+				7C2A5024262E71E10004842C /* ProgressOverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		7C0748682617CB6900AFAE79 /* Utilities */ = {
+		7C0748682617CB6900AFAE79 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				7C0748692617CB9500AFAE79 /* InitUtils.swift */,
 				7CB36AF02628DFAB002D2D48 /* FileUtils.swift */,
+				7CB36AF6262A9ECB002D2D48 /* PseudoFsUtils.swift */,
+				7CB36AF8262B3F40002D2D48 /* StringRenderer.swift */,
 			);
-			path = Utilities;
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		7CBA96AA26151570003FAD1F = {
@@ -123,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				7CBA96B626151570003FAD1F /* FileBridgeApp.swift */,
-				7C0748682617CB6900AFAE79 /* Utilities */,
+				7C0748682617CB6900AFAE79 /* Logic */,
 				7C0748672617CB5200AFAE79 /* Views */,
 				7CBA96BA26151571003FAD1F /* Assets.xcassets */,
 				7CBA96BF26151571003FAD1F /* Info.plist */,
@@ -290,9 +299,12 @@
 				7CBA96B926151570003FAD1F /* ContentView.swift in Sources */,
 				7CB36AB62624F892002D2D48 /* MainView.swift in Sources */,
 				7CBA96B726151570003FAD1F /* FileBridgeApp.swift in Sources */,
+				7CB36AF7262A9ECB002D2D48 /* PseudoFsUtils.swift in Sources */,
 				7CB36AF12628DFAB002D2D48 /* FileUtils.swift in Sources */,
+				7CB36AF9262B3F40002D2D48 /* StringRenderer.swift in Sources */,
 				7CB36AB82624F8B2002D2D48 /* PseudoFsView.swift in Sources */,
 				7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */,
+				7C2A5025262E71E10004842C /* ProgressOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
