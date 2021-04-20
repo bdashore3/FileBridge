@@ -9,76 +9,206 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct PseudoFsView: View {
+    @AppStorage("usingPseudoFs") var usingPseudoFs: Bool = false
+    
+    @Binding var showProgressView: Bool
+    
     @State private var isImporting = false
     @State private var isExporting = false
     @State private var isMoving = false
-    
-    static let fileUtils = FileUtils()
+
+    @State private var showFileView = false
+    @State private var showWarnAlert = false
+    @State private var showMoveAlert = false
+    @State private var showSuccessAlert = false
+    @State private var showErrorSheet = false
+
+    @State private var errorSheetString: String = "Nothing here yet"
     
     var body: some View {
         VStack {
-            Toggle(isOn: $isMoving) {
+            Text("PseudoFS")
+                .font(.largeTitle)
+                .padding()
+                .foregroundColor(.blue)
+            
+            VStack (alignment: .leading, spacing: 15) {
+                Spacer()
+                
+                Text("This feature migrates your files to the FileBridge folder for even easier iTunes file transfer.")
+                
+                Spacer()
+
+                Text("Use the import button to enable PseudoFS.")
+                Text("Use the restore button to revert PseudoFS.")
+                Text("Enable the move toggle if you want to migrate your initial files instead of copying them over.")
+                
+                Spacer()
+            }
+            .padding()
+            
+            Toggle(isOn: $isMoving, label: {
                 Text("Move my files")
-            }
-            
-            Button("Import") {
-                isImporting = true
-            }
-            .fileImporter(
-                isPresented: $isImporting,
-                allowedContentTypes: [.folder],
-                allowsMultipleSelection: false
-            ) { result in
-                switch result {
-                case .failure(let error):
-                    print("Error selecting file: \(error.localizedDescription)")
-                case .success(let urls):
-                    let src = urls[0]
-                    let dest = getDocumentsDirectory()
-                    
-                    if src.startAccessingSecurityScopedResource() {
-                        defer { src.stopAccessingSecurityScopedResource() }
-
-                        print("Accessing scoped resource")
-                        
-                        PseudoFsView.fileUtils.copyIphoneDirectory(src: src, dest: dest, cutString: "File Provider Storage", isMoving: isMoving)
-                    } else {
-                        print("Can't access scoped resource!")
-                    }
-                    
-                    print("Function completed")
+            })
+            .toggleStyle(SwitchToggleStyle(tint: .blue))
+            .animation(.easeInOut, value: isMoving)
+            .onChange(of: isMoving) { _value in
+                if isMoving {
+                    showWarnAlert = true
                 }
             }
-            
-            Button("Restore") {
-                isExporting = true
-            }
-            .fileImporter(
-                isPresented: $isExporting,
-                allowedContentTypes: [.folder],
-                allowsMultipleSelection: false
-            ) { result in
-                switch result {
-                case .failure(let error):
-                    print("Error selecting file: \(error.localizedDescription)")
-                case .success(let urls):
-                    let src = getDocumentsDirectory()
-                    let dest = urls[0]
-
-                    if dest.startAccessingSecurityScopedResource() {
-                        defer { src.stopAccessingSecurityScopedResource() }
-                        
-                        PseudoFsView.fileUtils.copyIphoneDirectory(src: src, dest: dest, cutString: "Documents", isMoving: isMoving)
+            .padding(.horizontal, 40)
+            .padding(.vertical, 10)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .padding(.horizontal)
+                    .foregroundColor(.gray)
+                    .opacity(0.2)
+            )
+            .alert(isPresented: $showWarnAlert) {
+                Alert(
+                    title: Text("Are you sure?"),
+                    message: Text("Please make sure to restore before uninstalling the app otherwise the FileBridge folder will be deleted!"),
+                    primaryButton: .destructive(Text("Proceed")),
+                    secondaryButton: .cancel() {
+                        isMoving = false
                     }
+                )
+            }
+            
+            Spacer(minLength: 20)
+            
+            HStack {
+                Spacer()
+                
+                Button("Import") {                    
+                    showMoveAlert = true
+                    isImporting = true
+                }
+                .padding()
+                .foregroundColor(Color.blue)
+                .font(.title3)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.gray)
+                        .opacity(0.2)
+                )
 
+                Spacer()
+                
+                Button("Restore") {
+                    showMoveAlert = true
+                    isExporting = true
+                }
+                .padding()
+                .foregroundColor(Color.blue)
+                .font(.title3)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.gray)
+                        .opacity(0.2)
+                )
+                
+                Spacer()
+            }
+            .alert(isPresented: $showMoveAlert) {
+                Alert(
+                    title: Text("Instructions"),
+                    message: Text("Choose the \"On my iphone\" directory on the next popup"),
+                    dismissButton: .default(Text("Got it!")) {
+                        showFileView = true
+                    }
+                )
+            }
+            
+            HStack {
+                Text("PseudoFS is")
+                Text(usingPseudoFs ? "Enabled" : "Disabled")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            }
+            .padding(.top)
+            .alert(isPresented: $showSuccessAlert) {
+                Alert(
+                    title: Text("Success"),
+                    message: Text("Check the FileBridge folder and you'll see your files!"),
+                    dismissButton: .default(Text("Got it!"))
+                )
+            }
+            
+            Spacer(minLength: 30)
+            
+        }
+        .actionSheet(isPresented: $showErrorSheet) {
+            ActionSheet(
+                title: Text("Error"),
+                message: Text(errorSheetString),
+                buttons: [.cancel()]
+            )
+        }
+        .fileImporter(
+            isPresented: $showFileView,
+            allowedContentTypes: [.folder],
+            allowsMultipleSelection: false
+        ) { result in
+            switch result {
+            case .failure(let error):
+                errorSheetString = error.localizedDescription
+                showErrorSheet = true
+            case .success(let urls):
+                showProgressView = true
+                
+                let group = DispatchGroup()
+                group.enter()
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    handleFileResult(urls: urls)
+
+                    group.leave()
+                }
+                
+                group.notify(queue: DispatchQueue.main) {
+                    isImporting = false
+                    isExporting = false
+                    isMoving = false
                 }
             }
+        }
+    }
+    
+    func handleFileResult(urls: [URL]) {
+        guard let documentsDirectory = urls.first else { return }
+    
+        let pseudoUtils = PseudoFsUtils(documentsDirectory, isImporting, isExporting, isMoving)
+        do {
+            try pseudoUtils.prepCopying()
+            
+            sleep(2)
+            showProgressView = false
+            showSuccessAlert = true
+            
+            usingPseudoFs = isImporting ? true : false
+        }
+        catch {
+            switch error {
+            case PseudoFsError.invalidDirectory:
+                errorSheetString = "Please select the On my iPhone directory!"
+                break
+            case StringRendererError.noPercentRemoval:
+                errorSheetString = "Something went wrong when creating the directory string. The error is below \n\n \(error)"
+            default:
+                errorSheetString = "The error is logged below \n\n \(error)"
+                break
+            }
+
+            sleep(2)
+            showProgressView = false
+            showErrorSheet = true
         }
     }
 }
 
 struct PseudoFsView_Previews: PreviewProvider {
     static var previews: some View {
-        PseudoFsView()
+        PseudoFsView(showProgressView: .constant(false))
     }
 }
