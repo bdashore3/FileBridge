@@ -35,7 +35,7 @@ struct PseudoFsView: View {
             VStack (alignment: .leading, spacing: 15) {
                 Spacer()
                 
-                Text("This feature migrates your files to the FileBridge folder for even easier iTunes file transfer.")
+                Text("This feature migrates your files to the FileBridge folder for even easier transfer.")
                 
                 Spacer()
 
@@ -81,7 +81,7 @@ struct PseudoFsView: View {
             HStack {
                 Spacer()
                 
-                Button("Import") {                    
+                Button("Import") {
                     showMoveAlert = true
                     isImporting = true
                 }
