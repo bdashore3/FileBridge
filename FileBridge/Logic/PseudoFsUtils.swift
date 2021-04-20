@@ -28,15 +28,16 @@ class PseudoFsUtils: FileUtils {
     
     // Check if we can access the scoped resource
     func prepCopying() throws {
-        let cutString: String?
+        let checkString: String?
+
         do {
-            cutString = try StringRenderer().getCutString(input: documentsDirectory.absoluteString)
+            checkString = try StringRenderer().getCutString(input: documentsDirectory.absoluteString)
         }
         catch {
             throw StringRendererError.noPercentRemoval
         }
 
-        if cutString != "File Provider Storage" {
+        if checkString != "File Provider Storage" {
             throw PseudoFsError.invalidDirectory
         }
         
@@ -46,7 +47,9 @@ class PseudoFsUtils: FileUtils {
             let src = isImporting ? documentsDirectory : appDirectory
             let dest = isImporting ? appDirectory : documentsDirectory
             
-            switch copyIphoneDirectory(src: src, dest: dest, cutString: cutString!) {
+            let cutString = isImporting ? checkString! : "Documents"
+            
+            switch copyIphoneDirectory(src: src, dest: dest, cutString: cutString) {
             case .success(()):
                 return
             case .failure(let error):
@@ -61,12 +64,12 @@ class PseudoFsUtils: FileUtils {
 
         do {
             let urls = try fileManager.contentsOfDirectory(at: src, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-
+            
             for url in urls {
                 guard let urlNoPercent = url.absoluteString.removingPercentEncoding else {
                     throw StringRendererError.noPercentRemoval
                 }
-                
+
                 if let range = urlNoPercent.range(of: cutString) {
                     let cutUrl = String(urlNoPercent[range.upperBound...])
                     let newUrl = dest.appendingPathComponent(cutUrl)
