@@ -9,7 +9,7 @@ import Foundation
 
 class FileUtils {
     // Utility function to fetch the app documents directory
-    public static func getDocumentsDirectory() -> URL {
+    public static func getAppDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
@@ -18,7 +18,7 @@ class FileUtils {
     func addEmptyText() {
         let str = "Do not delete this file!"
 
-        let url = FileUtils.getDocumentsDirectory().appendingPathComponent("doNotDelete.txt")
+        let url = FileUtils.getAppDirectory().appendingPathComponent("doNotDelete.txt")
         
         do {
             try str.write(to: url, atomically: true, encoding: .utf8)

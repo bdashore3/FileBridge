@@ -14,7 +14,7 @@ enum PseudoFsError: Error {
 
 class PseudoFsUtils: FileUtils {
     var documentsDirectory: URL
-    var appDirectory: URL = FileUtils.getDocumentsDirectory()
+    var appDirectory: URL = FileUtils.getAppDirectory()
     var isImporting: Bool = false
     var isExporting: Bool = false
     var isMoving: Bool = false
