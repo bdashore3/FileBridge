@@ -9,6 +9,7 @@ import Foundation
 
 enum PseudoFsError: Error {
     case invalidDirectory
+    case noFilesProvided
     case wrappedError(error: Error)
 }
 
@@ -16,14 +17,12 @@ class PseudoFsUtils: FileUtils {
     var documentsDirectory: URL
     var appDirectory: URL = FileUtils.getAppDirectory()
     var isImporting: Bool = false
-    var isExporting: Bool = false
-    var isMoving: Bool = false
+    var isCopying: Bool = false
     
-    init(_ documentsDirectory: URL, _ isImporting: Bool, _ isExporting: Bool, _ isMoving: Bool) {
+    init(_ documentsDirectory: URL, _ isImporting: Bool, _ isCopying: Bool) {
         self.documentsDirectory = documentsDirectory
         self.isImporting = isImporting
-        self.isExporting = isExporting
-        self.isMoving = isMoving
+        self.isCopying = isCopying
     }
     
     // Check if we can access the scoped resource
@@ -65,6 +64,10 @@ class PseudoFsUtils: FileUtils {
         do {
             let urls = try fileManager.contentsOfDirectory(at: src, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
             
+            if urls.isEmpty {
+                throw PseudoFsError.noFilesProvided
+            }
+            
             for url in urls {
                 guard let urlNoPercent = url.absoluteString.removingPercentEncoding else {
                     throw StringRendererError.noPercentRemoval
@@ -73,18 +76,22 @@ class PseudoFsUtils: FileUtils {
                 if let range = urlNoPercent.range(of: cutString) {
                     let cutUrl = String(urlNoPercent[range.upperBound...])
                     let newUrl = dest.appendingPathComponent(cutUrl)
-
+                    
+                    if cutUrl == "/doNotDelete.txt" {
+                        continue
+                    }
+                    
                     // To avoid file already exists error
                     try? fileManager.removeItem(at: newUrl)
 
-                    if isMoving {
-                        try fileManager.moveItem(at: url, to: newUrl)
-                    } else {
+                    if isCopying && isImporting {
                         try fileManager.copyItem(at: url, to: newUrl)
+                    } else {
+                        try fileManager.moveItem(at: url, to: newUrl)
                     }
-                    
+
                     // Make the FileBridge folder show up again
-                    if isExporting && isMoving {
+                    if !isImporting && !isCopying {
                         addEmptyText()
                     }
                 }

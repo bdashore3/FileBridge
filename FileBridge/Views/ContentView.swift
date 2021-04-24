@@ -50,11 +50,10 @@ struct ContentView: View {
                         dismissButton: .default(Text("Got it!")))
                 }
                 .background(
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.gray)
                         .opacity(0.2)
                 )
-                .cornerRadius(40)
             }
             
             Spacer(minLength: 50)
