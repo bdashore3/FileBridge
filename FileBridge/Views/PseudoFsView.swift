@@ -12,10 +12,9 @@ struct PseudoFsView: View {
     @AppStorage("usingPseudoFs") var usingPseudoFs: Bool = false
     
     @Binding var showProgressView: Bool
-    
+
     @State private var isImporting = false
-    @State private var isExporting = false
-    @State private var isMoving = false
+    @State private var isCopying = true
 
     @State private var showFileView = false
     @State private var showWarnAlert = false
@@ -39,21 +38,21 @@ struct PseudoFsView: View {
                 
                 Spacer()
 
-                Text("Use the import button to enable PseudoFS.")
-                Text("Use the restore button to revert PseudoFS.")
-                Text("Enable the move toggle if you want to migrate your initial files instead of copying them over.")
+                Text("Press the button to enable/revert PseudoFS.")
+                Text("The button changes if PseudoFS is enabled.")
+                Text("Disable the safe copying toggle if you want to migrate your initial files instead of copying them over.")
                 
                 Spacer()
             }
             .padding()
             
-            Toggle(isOn: $isMoving, label: {
-                Text("Move my files")
+            Toggle(isOn: $isCopying, label: {
+                Text("Safely copy my files")
             })
             .toggleStyle(SwitchToggleStyle(tint: .blue))
-            .animation(.easeInOut, value: isMoving)
-            .onChange(of: isMoving) { _value in
-                if isMoving {
+            .animation(.easeInOut, value: isCopying)
+            .onChange(of: isCopying) { _value in
+                if !isCopying && !usingPseudoFs {
                     showWarnAlert = true
                 }
             }
@@ -71,46 +70,33 @@ struct PseudoFsView: View {
                     message: Text("Please make sure to restore before uninstalling the app otherwise the FileBridge folder will be deleted!"),
                     primaryButton: .destructive(Text("Proceed")),
                     secondaryButton: .cancel() {
-                        isMoving = false
+                        isCopying = true
                     }
                 )
             }
+            .disabled(usingPseudoFs == true)
             
             Spacer(minLength: 20)
             
-            HStack {
-                Spacer()
+            // Dynamically switch between import and restore
+            Button {
+                showMoveAlert = true
                 
-                Button("Import") {
-                    showMoveAlert = true
+                if !usingPseudoFs {
                     isImporting = true
                 }
-                .padding()
-                .foregroundColor(Color.blue)
-                .font(.title3)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.gray)
-                        .opacity(0.2)
-                )
-
-                Spacer()
-                
-                Button("Restore") {
-                    showMoveAlert = true
-                    isExporting = true
-                }
-                .padding()
-                .foregroundColor(Color.blue)
-                .font(.title3)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.gray)
-                        .opacity(0.2)
-                )
-                
-                Spacer()
+            } label: {
+                Text(usingPseudoFs ? "Restore" : "Import")
             }
+            .padding(.horizontal, 25)
+            .padding()
+            .foregroundColor(Color.blue)
+            .font(.title3)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.gray)
+                    .opacity(0.2)
+            )
             .alert(isPresented: $showMoveAlert) {
                 Alert(
                     title: Text("Instructions"),
@@ -120,6 +106,8 @@ struct PseudoFsView: View {
                     }
                 )
             }
+
+            Spacer()
             
             HStack {
                 Text("PseudoFS is")
@@ -130,7 +118,7 @@ struct PseudoFsView: View {
             .alert(isPresented: $showSuccessAlert) {
                 Alert(
                     title: Text("Success"),
-                    message: Text("Check the FileBridge folder and you'll see your files!"),
+                    message: Text("Check the \(usingPseudoFs ? "FileBridge" : "\"On my iPhone\"") folder and you'll see your files!"),
                     dismissButton: .default(Text("Got it!"))
                 )
             }
@@ -168,8 +156,7 @@ struct PseudoFsView: View {
                 
                 group.notify(queue: DispatchQueue.main) {
                     isImporting = false
-                    isExporting = false
-                    isMoving = false
+                    isCopying = usingPseudoFs ? false : true
                 }
             }
         }
@@ -178,7 +165,7 @@ struct PseudoFsView: View {
     func handleFileResult(urls: [URL]) {
         guard let documentsDirectory = urls.first else { return }
     
-        let pseudoUtils = PseudoFsUtils(documentsDirectory, isImporting, isExporting, isMoving)
+        let pseudoUtils = PseudoFsUtils(documentsDirectory, isImporting, isCopying)
         do {
             try pseudoUtils.prepCopying()
             

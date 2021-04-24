@@ -18,7 +18,7 @@ struct MainView: View {
                 }
             PseudoFsView(showProgressView: $showProgressView)
                 .tabItem {
-                    Label("Pseudo-FS", systemImage: "folder")
+                    Label("PseudoFS", systemImage: "folder")
                 }
         }
         .blur(radius: showProgressView ? 2 : 0)
