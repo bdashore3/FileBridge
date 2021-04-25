@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showAlert: Bool = false
     
+    // First page view
     var body: some View {
         VStack {
             HStack {

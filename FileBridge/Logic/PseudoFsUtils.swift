@@ -13,7 +13,9 @@ enum PseudoFsError: Error {
     case wrappedError(error: Error)
 }
 
+// PseudoFS utilities
 class PseudoFsUtils: FileUtils {
+    // Init variables used in the entire class
     var documentsDirectory: URL
     var appDirectory: URL = FileUtils.getAppDirectory()
     var isImporting: Bool = false
@@ -30,19 +32,22 @@ class PseudoFsUtils: FileUtils {
         let checkString: String?
 
         do {
-            checkString = try StringRenderer().getCutString(input: documentsDirectory.absoluteString)
+            checkString = try StringRenderer().getCheckString(input: documentsDirectory.absoluteString)
         }
         catch {
             throw StringRendererError.noPercentRemoval
         }
 
+        // Are we in "On my iPhone"?
         if checkString != "File Provider Storage" {
             throw PseudoFsError.invalidDirectory
         }
         
         if documentsDirectory.startAccessingSecurityScopedResource() {
+            // Stop accessing the scoped resource even on error
             defer { documentsDirectory.stopAccessingSecurityScopedResource() }
             
+            // Set a generic source and destination
             let src = isImporting ? documentsDirectory : appDirectory
             let dest = isImporting ? appDirectory : documentsDirectory
             

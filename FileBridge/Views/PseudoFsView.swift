@@ -9,21 +9,27 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct PseudoFsView: View {
+    // Checks if the user is using PseudoFS
     @AppStorage("usingPseudoFs") var usingPseudoFs: Bool = false
     
+    // Binds to MainView's state var
     @Binding var showProgressView: Bool
 
+    // State vars to be passed to logic
     @State private var isImporting = false
     @State private var isCopying = true
 
+    // State vars for UI elements
     @State private var showFileView = false
     @State private var showWarnAlert = false
     @State private var showMoveAlert = false
     @State private var showSuccessAlert = false
     @State private var showErrorSheet = false
 
+    // If there's an error
     @State private var errorSheetString: String = "Nothing here yet"
     
+    // View for PseudoFS
     var body: some View {
         VStack {
             Text("PseudoFS")
@@ -182,6 +188,8 @@ struct PseudoFsView: View {
                 break
             case StringRendererError.noPercentRemoval:
                 errorSheetString = "Something went wrong when creating the directory string. The error is below \n\n \(error)"
+            case PseudoFsError.noFilesProvided:
+                errorSheetString = "There were no files in the \"On my iPhone\" directory, aborting..."
             default:
                 errorSheetString = "The error is logged below \n\n \(error)"
                 break
