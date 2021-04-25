@@ -55,9 +55,12 @@ struct PseudoFsView: View {
             Toggle(isOn: $isCopying, label: {
                 Text("Safely copy my files")
             })
+            .onAppear {
+                isCopying = usingPseudoFs ? false : true
+            }
             .toggleStyle(SwitchToggleStyle(tint: .blue))
             .animation(.easeInOut, value: isCopying)
-            .onChange(of: isCopying) { _value in
+            .onChange(of: isCopying) { _ in
                 if !isCopying && !usingPseudoFs {
                     showWarnAlert = true
                 }
