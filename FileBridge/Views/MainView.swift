@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     @State var showProgressView = false
-    
+
+    // Shows tabs on bottom of the screen
     var body: some View {
         TabView {
             ContentView()

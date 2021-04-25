@@ -10,6 +10,7 @@ import SwiftUI
 struct ProgressOverlayView: View {
     @Binding var isShowing: Bool
     
+    // Show a progress view that blocks all UI elements
     var body: some View {
         ZStack {
             if isShowing {
@@ -29,7 +30,7 @@ struct ProgressOverlayView: View {
     }
 }
 
-struct PseudoFsParentView_Previews: PreviewProvider {
+struct ProgressOverlayView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressOverlayView(isShowing: .constant(false))
     }

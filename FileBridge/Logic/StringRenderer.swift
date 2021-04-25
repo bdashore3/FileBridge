@@ -12,7 +12,8 @@ enum StringRendererError: Error {
 }
 
 class StringRenderer {
-    func getCutString(input: String) throws -> String {
+    // Fetches the last word from a file path and returns it for checking
+    func getCheckString(input: String) throws -> String {
         var inputArray = input.components(separatedBy: "/")
         inputArray.removeAll(where: { $0 == "" })
         
