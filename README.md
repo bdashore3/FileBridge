@@ -30,12 +30,16 @@ To make the FileBridge folder show up on your phone:
 
 A blank text file will be automatically added in a future app version which automates this setup process.
 
+## PseudoFS
+PseudoFS is a feature that shifts your iPhone's documents into the FileBridge folder for even easier file transfer. This makes your phone's filesystem similar to Android phones where the user can see all the internal storage directories on the PC file explorer (which is iTunes in this case).
+
+Follow the instructions in the PseudoFS tab for enabling this feature and transfer files like normal after setup is complete.
+
+DISCLAIMER: I am not responsible if you lose data with this feature. There are plenty of safeguards and warnings to prevent that from happening. The only way data can possibly be lost is if you uninstall the app and the copy safety switch was switched off. 
+
 ## Planned features
 Here are features that I have planned for future releases (these are also in the issues)
 - Add informational buttons so the app is easier to use
-- Add the option to create a "virtual filesystem"
-	- This copies the existing iPhone files and puts them inside the FileBridge folder
-	- The FileBridge folder is now considered the "root directory" for a user's files
 - Add a how-to guide for transferring various types of files and how to optimize the iDevice for easy FileBridge transfer
 
 ## Contribution
