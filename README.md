@@ -2,6 +2,9 @@
 
 An iOS application which bridges the gap between an iDevice and iTunes file sharing.
 
+## Join the beta
+The beta can be accessed by using this [TestFlight link](https://testflight.apple.com/join/9Yvmc3jS)
+
 ## Why did I make this?
 File sharing between an iPhone and iTunes has always been a hassle. It's really difficult to transfer one file over a USB cable since iOS doesn't readily show your filesystem inside iTunes.
 
