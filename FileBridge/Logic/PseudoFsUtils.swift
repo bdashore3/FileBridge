@@ -53,7 +53,7 @@ class PseudoFsUtils: FileUtils {
             
             let cutString = isImporting ? checkString! : "Documents"
             
-            switch copyIphoneDirectory(src: src, dest: dest, cutString: cutString) {
+            switch copyIphoneDirectory(src, dest, cutString) {
             case .success(()):
                 return
             case .failure(let error):
@@ -63,7 +63,7 @@ class PseudoFsUtils: FileUtils {
     }
     
     // Copy or move the files within the directory to the app directory or vice versa
-    private func copyIphoneDirectory(src: URL, dest: URL, cutString: String) -> Result<Void, Error> {
+    private func copyIphoneDirectory(_ src: URL, _ dest: URL, _ cutString: String) -> Result<Void, Error> {
         let fileManager = FileManager.default
 
         do {

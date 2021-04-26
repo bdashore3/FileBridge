@@ -21,6 +21,10 @@ struct MainView: View {
                 .tabItem {
                     Label("PseudoFS", systemImage: "folder")
                 }
+            AboutView()
+                .tabItem {
+                    Label("About", systemImage: "info.circle")
+                }
         }
         .blur(radius: showProgressView ? 2 : 0)
         .overlay(ProgressOverlayView(isShowing: $showProgressView))

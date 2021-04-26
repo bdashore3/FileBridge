@@ -97,8 +97,8 @@ struct PseudoFsView: View {
             } label: {
                 Text(usingPseudoFs ? "Restore" : "Import")
             }
-            .padding(.horizontal, 25)
             .padding()
+            .padding(.horizontal, 10)
             .foregroundColor(Color.blue)
             .font(.title3)
             .background(
