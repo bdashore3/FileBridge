@@ -70,7 +70,7 @@ class PseudoFsUtils: FileUtils {
             let urls = try fileManager.contentsOfDirectory(at: src, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
             
             if urls.isEmpty {
-                throw PseudoFsError.noFilesProvided
+                return .success(())
             }
             
             for url in urls {

@@ -191,8 +191,6 @@ struct PseudoFsView: View {
                 break
             case StringRendererError.noPercentRemoval:
                 errorSheetString = "Something went wrong when creating the directory string. The error is below \n\n \(error)"
-            case PseudoFsError.noFilesProvided:
-                errorSheetString = "There were no files in the \"On my iPhone\" directory, aborting..."
             default:
                 errorSheetString = "The error is logged below \n\n \(error)"
                 break
