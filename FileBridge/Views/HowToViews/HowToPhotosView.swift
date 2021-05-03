@@ -45,6 +45,8 @@ struct HowToPhotosView: View {
                 })
                 
                 Text("Here's a video for the process in action:")
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/Photo-share.mp4")
 
                 Spacer()
             }

@@ -29,9 +29,3 @@ struct ProgressOverlayView: View {
         }
     }
 }
-
-struct ProgressOverlayView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressOverlayView(isShowing: .constant(false))
-    }
-}

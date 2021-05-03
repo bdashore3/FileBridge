@@ -26,6 +26,10 @@ struct HowToView: View {
                         Text("General file transfer")
                     }
                     
+                    NavigationLink(destination: HowToRegenView()) {
+                        Text("Regenerate the FileBridge folder")
+                    }
+                    
                     NavigationLink(destination: HowToPseudoFSImportView()) {
                         Text("PseudoFS import guide")
                     }

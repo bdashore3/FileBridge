@@ -44,6 +44,7 @@ struct HowToPseudoFSImportView: View {
                     "The operation was sucessful if you see a success alert",
                     "Look at other guides for reorganizing your filesystem and working with PseudoFS",
                 ])
+
                 
                 Text("About safe copying:")
                 
@@ -52,7 +53,15 @@ struct HowToPseudoFSImportView: View {
                     "Turning this switch off is perfectly fine. Just make sure not to uninstall the app when PseudoFS is enabled!",
                 ])
                 
-                Text("Here's a video for the process in action:")
+                Text("Here's a video for the process in action when the copy switch is on:")
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-import-copy.mp4")
+                
+                Text("Importing when the copy switch is off:")
+                    .padding(.top)
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-import-move.mp4")
+                
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -84,7 +93,9 @@ struct HowToPseudoFsRestoreView: View {
                     "The restore action will overwrite any files that exist in the \"On my iPhone\" directory with the matching ones from FileBridge"
                 ])
                 
-                Text("Here's a gif for the process in action:")
+                Text("Here's a video for the process in action:")
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-restore.mp4")
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)

@@ -24,7 +24,19 @@ struct HowToShareView: View {
                     "Drag and drop the file/folder anywhere inside your PC file explorer",
                 ])
                 
-                Text("Here's a video for the process in action:")
+                Text("Here's a video explaining how to prep for transfer:")
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-phone.mp4")
+                
+                Text("Video for tranferring iTunes -> Windows:")
+                    .padding(.top)
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-windows.mp4")
+                
+                Text("Video for transferring in Finder:")
+                    .padding(.top)
+                
+                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-mac.mp4")
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)
