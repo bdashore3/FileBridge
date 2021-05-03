@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var showProgressView = false
-
+    
     // Shows tabs on bottom of the screen
     var body: some View {
         TabView {
@@ -20,6 +20,10 @@ struct MainView: View {
             PseudoFsView(showProgressView: $showProgressView)
                 .tabItem {
                     Label("PseudoFS", systemImage: "folder")
+                }
+            HowToView()
+                .tabItem {
+                    Label("Guides", systemImage: "book")
                 }
             AboutView()
                 .tabItem {

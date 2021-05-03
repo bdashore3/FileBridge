@@ -32,11 +32,13 @@ struct ListRowLinkView: View {
 
 struct ListRowTextView: View {
     private var leftText: String
-    private var rightText: String
+    private var rightText: String?
+    private var rightSymbol: String?
     
-    init(leftText: String, rightText: String) {
+    init(leftText: String, rightText: String?, rightSymbol: String?) {
         self.leftText = leftText
         self.rightText = rightText
+        self.rightSymbol = rightSymbol
     }
     
     var body: some View {
@@ -44,8 +46,13 @@ struct ListRowTextView: View {
             Text(leftText)
                 
             Spacer()
-                
-            Text(rightText)
+            
+            if let rightText = rightText {
+                Text(rightText)
+            } else {
+                Image(systemName: rightSymbol!)
+                    .foregroundColor(.gray)
+            }
         }
     }
 }

@@ -26,8 +26,8 @@ struct AboutView: View {
                 .padding()
 
             List {
-                ListRowTextView(leftText: "Version", rightText: UIApplication.appVersion())
-                ListRowTextView(leftText: "Build Number", rightText: UIApplication.appBuild())
+                ListRowTextView(leftText: "Version", rightText: UIApplication.appVersion(), rightSymbol: nil)
+                ListRowTextView(leftText: "Build Number", rightText: UIApplication.appBuild(), rightSymbol: nil)
                 HStack {
                     Button("Disclaimer") {
                         showDisclaimer = true
