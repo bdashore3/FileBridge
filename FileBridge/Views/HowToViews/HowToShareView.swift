@@ -11,7 +11,7 @@ struct HowToShareView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("This guide is for transferring a single file through FileBridge onto iTunes or Finder on Mac")
+                Text("This guide is for transferring a single file through FileBridge onto iTunes or Finder on Mac.")
                     
                 Text("Here are the steps:")
                     
@@ -67,6 +67,7 @@ struct HowToShareSheetView: View {
             
             Spacer(minLength: 30)
         }
+        .multilineTextAlignment(.leading)
     }
 }
 

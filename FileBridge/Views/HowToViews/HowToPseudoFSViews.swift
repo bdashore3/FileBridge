@@ -13,7 +13,7 @@ struct HowToPseudoFSImportView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("This guide is for enabling the PseudoFS feature. Please read the entire article")
+                Text("This guide is for enabling the PseudoFS feature. Please read the entire article.")
                 
                 Button {
                     showSheet = true

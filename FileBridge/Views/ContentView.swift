@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showAlert: Bool = false
+    @Binding var tab: Tab
+    
+    @State private var showAlert = false
     
     // First page view
     var body: some View {
@@ -16,24 +18,44 @@ struct ContentView: View {
             HStack {
                 Text("Welcome to")
                 Text("FileBridge")
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(.blue)
             }
             .font(.largeTitle)
             .padding()
-
-            VStack (alignment: .center, spacing: 20) {
-                Spacer()
-                
-                Text("You can close this app")
-                Text("Open your device in iTunes and navigate to File Sharing")
-                
-                Spacer()
+            
+            Text("This app allows you to easily transfer files with nothing but a lightning cable and iTunes or Finder.")
+                .padding()
+                .font(.title2)
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+            
+            Text("Getting Started or need help?")
+                .font(.title2)
+            
+            Button {
+                tab = Tab.howto
+            } label: {
+                ListRowTextView(leftText: "Check the tutorial guides", rightText: nil, rightSymbol: "chevron.right")
+                    .foregroundColor(.primary)
             }
-            .font(.body)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 13)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.gray)
+                    .opacity(0.2)
+            )
+            .frame(maxWidth: .infinity, alignment: .center)
             .padding()
             
-            VStack (spacing: 15) {
-                Text("Missing the folder in files? Click the button.")
+            
+            Spacer()
+            
+            VStack (alignment: .center) {
+                Text("Missing the FileBridge folder in files?")
+                Text("Click the button.")
+            }
                 Button {
                     FileUtils().addEmptyText()
                     
@@ -41,7 +63,7 @@ struct ContentView: View {
                 } label: {
                     Text("Recover folder")
                         .padding(20)
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(.blue)
                         .font(.title3)
                 }
                 .alert(isPresented: $showAlert) {
@@ -55,16 +77,13 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                         .opacity(0.2)
                 )
-            }
-            
-            Spacer(minLength: 50)
+                .padding(.bottom, 30)
         }
-        .multilineTextAlignment(.center)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(tab: .constant(Tab.home))
     }
 }

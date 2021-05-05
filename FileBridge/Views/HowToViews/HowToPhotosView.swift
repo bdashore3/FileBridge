@@ -13,7 +13,7 @@ struct HowToPhotosView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("This guide is for transferring a single photo or video in its original quality")
+                Text("This guide is for transferring a single photo or video in its original quality.")
                     
                 Text("Here are the steps:")
                     

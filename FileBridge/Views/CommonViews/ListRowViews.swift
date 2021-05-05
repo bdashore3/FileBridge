@@ -20,7 +20,7 @@ struct ListRowLinkView: View {
     var body: some View {
         HStack {
             Link(text, destination: link)
-                .foregroundColor(Color.primary)
+                .foregroundColor(.primary)
                 
             Spacer()
                 

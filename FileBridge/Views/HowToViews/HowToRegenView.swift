@@ -40,7 +40,7 @@ struct HowToRegenView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)
-            .navigationTitle("Safari")
+            .navigationTitle("Regenerate FileBridge")
         }
     }
 }

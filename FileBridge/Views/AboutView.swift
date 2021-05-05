@@ -42,6 +42,7 @@ struct AboutView: View {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.gray)
                 }
+                ListRowLinkView(displayText: "Website", innerLink: "https://kingbri.me/filebridge")
                 ListRowLinkView(displayText: "GitHub Repository", innerLink: "https://github.com/bdashore3/FileBridge")
                 ListRowLinkView(displayText: "Discord Support", innerLink: "https://discord.gg/pswt7by")
             }

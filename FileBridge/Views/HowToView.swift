@@ -11,15 +11,17 @@ struct HowToView: View {
     var body: some View {
         NavigationView {
             VStack {
-                VStack {
-                    Text("How-to guides")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(.blue)
-                        
+                Text("How-to guides")
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                    .padding()
+
+                VStack(alignment: .leading, spacing: 20) {
                     Text("Since this app may be a bit complicated to use, I have made some in-app guides on situations and features for file transfer. Enjoy!")
-                        .padding()
+                    
+                    Text("A good place to get started would be the \"General file transfer\" tutorial")
                 }
+                .padding()
 
                 List {
                     NavigationLink(destination: HowToShareView()) {

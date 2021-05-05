@@ -38,15 +38,16 @@ struct PseudoFsView: View {
                 .foregroundColor(.blue)
             
             VStack (alignment: .leading, spacing: 15) {
-                Spacer()
-                
                 Text("This feature migrates your files to the FileBridge folder for even easier transfer.")
                 
                 Spacer()
 
-                Text("Press the button to enable/revert PseudoFS.")
-                Text("The button changes if PseudoFS is enabled.")
-                Text("Disable the safe copying toggle if you want to migrate your initial files instead of copying them over.")
+                Text("To set up PseudoFS, please follow the instructions in the Guides tab.")
+
+                BulletedListView([
+                    "If the button says \"Import\", follow the import guide.",
+                    "If the button says \"Restore\", follow the restoration guide."
+                ])
                 
                 Spacer()
             }
@@ -99,7 +100,7 @@ struct PseudoFsView: View {
             }
             .padding()
             .padding(.horizontal, 10)
-            .foregroundColor(Color.blue)
+            .foregroundColor(.blue)
             .font(.title3)
             .background(
                 RoundedRectangle(cornerRadius: 10)
@@ -121,7 +122,7 @@ struct PseudoFsView: View {
             HStack {
                 Text("PseudoFS is")
                 Text(usingPseudoFs ? "Enabled" : "Disabled")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
             }
             .padding(.top)
             .alert(isPresented: $showSuccessAlert) {
