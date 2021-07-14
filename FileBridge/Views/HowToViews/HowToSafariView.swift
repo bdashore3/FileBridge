@@ -32,7 +32,7 @@ struct HowToSafariView: View {
                 
                 Text("Here's a video for the process in action:")
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/Safari-downloads.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/Safari-downloads.mp4")
                 
                 Spacer()
             }

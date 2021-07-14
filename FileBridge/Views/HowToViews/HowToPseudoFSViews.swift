@@ -55,12 +55,12 @@ struct HowToPseudoFSImportView: View {
                 
                 Text("Here's a video for the process in action when the copy switch is on:")
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-import-copy.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/PseudoFS-import-copy.mp4")
                 
                 Text("Importing when the copy switch is off:")
                     .padding(.top)
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-import-move.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/PseudoFS-import-move.mp4")
                 
             }
             .padding()
@@ -95,7 +95,7 @@ struct HowToPseudoFsRestoreView: View {
                 
                 Text("Here's a video for the process in action:")
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/PseudoFS-restore.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/PseudoFS-restore.mp4")
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)

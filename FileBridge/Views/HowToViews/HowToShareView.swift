@@ -26,17 +26,17 @@ struct HowToShareView: View {
                 
                 Text("Here's a video explaining how to prep for transfer:")
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-phone.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/FileTransfer-phone.mp4")
                 
                 Text("Video for tranferring iTunes -> Windows:")
                     .padding(.top)
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-windows.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/FileTransfer-windows.mp4")
                 
                 Text("Video for transferring in Finder:")
                     .padding(.top)
                 
-                VideoView(urlInput: "https://files.kingbri.me/app-assets/FileBridge/FileTransfer-mac.mp4")
+                VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/FileTransfer-mac.mp4")
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .topLeading)
