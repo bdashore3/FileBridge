@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6822B027B759C200D27B68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822AF27B759C200D27B68 /* ContentView.swift */; };
+		0C6822B227B75A2200D27B68 /* TaskExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B127B75A2200D27B68 /* TaskExtension.swift */; };
+		0C6822B427B75B6C00D27B68 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */; };
+		0C92449027B7596F0089BFF7 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7FFA0327B6BFD80003E5B3 /* Messages.framework */; };
+		0C92449327B7596F0089BFF7 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92449227B7596F0089BFF7 /* MessagesViewController.swift */; };
+		0C92449627B7596F0089BFF7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92449427B7596F0089BFF7 /* MainInterface.storyboard */; };
+		0C92449827B759700089BFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C92449727B759700089BFF7 /* Assets.xcassets */; };
+		0C92449C27B759700089BFF7 /* MessageExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0C92448F27B7596F0089BFF7 /* MessageExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0748692617CB9500AFAE79 /* InitUtils.swift */; };
 		7C0C13AB263998C300A078CF /* HowToSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C13AA263998C300A078CF /* HowToSafariView.swift */; };
 		7C0C13AD26399FC800A078CF /* ExtraTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C13AC26399FC800A078CF /* ExtraTextViews.swift */; };
@@ -35,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0C92449A27B759700089BFF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CBA96AB26151570003FAD1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C92448E27B7596F0089BFF7;
+			remoteInfo = MessageExt;
+		};
 		7CBA96C526151571003FAD1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7CBA96AB26151570003FAD1F /* Project object */;
@@ -51,7 +66,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C7FFA1127B6BFD90003E5B3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0C92449C27B759700089BFF7 /* MessageExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0C6822AF27B759C200D27B68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C6822B127B75A2200D27B68 /* TaskExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExtension.swift; sourceTree = "<group>"; };
+		0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0C7FFA0327B6BFD80003E5B3 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		0C92448F27B7596F0089BFF7 /* MessageExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C92449227B7596F0089BFF7 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		0C92449527B7596F0089BFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0C92449727B759700089BFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C92449927B759700089BFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0748692617CB9500AFAE79 /* InitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUtils.swift; sourceTree = "<group>"; };
 		7C0C13AA263998C300A078CF /* HowToSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToSafariView.swift; sourceTree = "<group>"; };
 		7C0C13AC26399FC800A078CF /* ExtraTextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraTextViews.swift; sourceTree = "<group>"; };
@@ -86,6 +124,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C92448C27B7596F0089BFF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C92449027B7596F0089BFF7 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBA96B026151570003FAD1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +156,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7FFA0227B6BFD80003E5B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C7FFA0327B6BFD80003E5B3 /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C92449127B7596F0089BFF7 /* MessageExt */ = {
+			isa = PBXGroup;
+			children = (
+				0C92449227B7596F0089BFF7 /* MessagesViewController.swift */,
+				0C92449427B7596F0089BFF7 /* MainInterface.storyboard */,
+				0C92449727B759700089BFF7 /* Assets.xcassets */,
+				0C92449927B759700089BFF7 /* Info.plist */,
+				0C6822AF27B759C200D27B68 /* ContentView.swift */,
+				0C6822B127B75A2200D27B68 /* TaskExtension.swift */,
+				0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */,
+			);
+			path = MessageExt;
+			sourceTree = "<group>";
+		};
 		7C0748672617CB5200AFAE79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +209,8 @@
 				7CBA96B526151570003FAD1F /* FileBridge */,
 				7CBA96C726151571003FAD1F /* FileBridgeTests */,
 				7CBA96D226151571003FAD1F /* FileBridgeUITests */,
+				0C92449127B7596F0089BFF7 /* MessageExt */,
+				0C7FFA0227B6BFD80003E5B3 /* Frameworks */,
 				7CBA96B426151570003FAD1F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +221,7 @@
 				7CBA96B326151570003FAD1F /* FileBridge.app */,
 				7CBA96C426151571003FAD1F /* FileBridgeTests.xctest */,
 				7CBA96CF26151571003FAD1F /* FileBridgeUITests.xctest */,
+				0C92448F27B7596F0089BFF7 /* MessageExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +301,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0C92448E27B7596F0089BFF7 /* MessageExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C92449F27B759700089BFF7 /* Build configuration list for PBXNativeTarget "MessageExt" */;
+			buildPhases = (
+				0C92448B27B7596F0089BFF7 /* Sources */,
+				0C92448C27B7596F0089BFF7 /* Frameworks */,
+				0C92448D27B7596F0089BFF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessageExt;
+			productName = MessageExt;
+			productReference = 0C92448F27B7596F0089BFF7 /* MessageExt.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		7CBA96B226151570003FAD1F /* FileBridge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CBA96D826151572003FAD1F /* Build configuration list for PBXNativeTarget "FileBridge" */;
@@ -237,10 +325,12 @@
 				7CBA96AF26151570003FAD1F /* Sources */,
 				7CBA96B026151570003FAD1F /* Frameworks */,
 				7CBA96B126151570003FAD1F /* Resources */,
+				0C7FFA1127B6BFD90003E5B3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0C92449B27B759700089BFF7 /* PBXTargetDependency */,
 			);
 			name = FileBridge;
 			packageProductDependencies = (
@@ -291,9 +381,12 @@
 		7CBA96AB26151570003FAD1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					0C92448E27B7596F0089BFF7 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					7CBA96B226151570003FAD1F = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -325,11 +418,21 @@
 				7CBA96B226151570003FAD1F /* FileBridge */,
 				7CBA96C326151571003FAD1F /* FileBridgeTests */,
 				7CBA96CE26151571003FAD1F /* FileBridgeUITests */,
+				0C92448E27B7596F0089BFF7 /* MessageExt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C92448D27B7596F0089BFF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C92449827B759700089BFF7 /* Assets.xcassets in Resources */,
+				0C92449627B7596F0089BFF7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBA96B126151570003FAD1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +459,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C92448B27B7596F0089BFF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6822B427B75B6C00D27B68 /* ContentViewModel.swift in Sources */,
+				0C6822B227B75A2200D27B68 /* TaskExtension.swift in Sources */,
+				0C6822B027B759C200D27B68 /* ContentView.swift in Sources */,
+				0C92449327B7596F0089BFF7 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBA96AF26151570003FAD1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +517,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0C92449B27B759700089BFF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C92448E27B7596F0089BFF7 /* MessageExt */;
+			targetProxy = 0C92449A27B759700089BFF7 /* PBXContainerItemProxy */;
+		};
 		7CBA96C626151571003FAD1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7CBA96B226151570003FAD1F /* FileBridge */;
@@ -415,7 +534,76 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0C92449427B7596F0089BFF7 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C92449527B7596F0089BFF7 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0C92449D27B759700089BFF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 8A74DBQ6S3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MessageExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FileBridge;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = me.kingbri.FileBridge.MessageExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0C92449E27B759700089BFF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 8A74DBQ6S3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MessageExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FileBridge;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = me.kingbri.FileBridge.MessageExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7CBA96D626151572003FAD1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -535,6 +723,7 @@
 		7CBA96D926151572003FAD1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -562,6 +751,7 @@
 		7CBA96DA26151572003FAD1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -673,6 +863,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C92449F27B759700089BFF7 /* Build configuration list for PBXNativeTarget "MessageExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C92449D27B759700089BFF7 /* Debug */,
+				0C92449E27B759700089BFF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7CBA96AE26151570003FAD1F /* Build configuration list for PBXProject "FileBridge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
