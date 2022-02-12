@@ -9,11 +9,11 @@ import SwiftUI
 
 struct BulletedListView: View {
     private var inputStrings: [String]
-    
+
     init(_ inputStrings: [String]) {
         self.inputStrings = inputStrings
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             ForEach(inputStrings, id: \.self) { string in
@@ -33,7 +33,7 @@ struct BulletedListView: View {
 
 struct NumberedListView: View {
     private var inputStrings: [String]
-    
+
     init(_ inputStrings: [String]) {
         self.inputStrings = inputStrings
     }

@@ -14,19 +14,19 @@ struct VideoView: View {
     init(urlInput: String) {
         self.urlInput = urlInput
     }
-    
+
     var body: some View {
         let player = fetchVideoPlayer(input: urlInput)
-        
+
         VideoPlayer(player: player)
-            .onDisappear() {
+            .onDisappear {
                 player.pause()
             }
             .ignoresSafeArea()
             .aspectRatio(contentMode: .fit)
     }
-    
+
     func fetchVideoPlayer(input: String) -> AVPlayer {
-        return AVPlayer(url: URL(string: input)!)
+        AVPlayer(url: URL(string: input)!)
     }
 }

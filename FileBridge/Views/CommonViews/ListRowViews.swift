@@ -11,19 +11,19 @@ import SwiftUI
 struct ListRowLinkView: View {
     private var text: String
     private var link: URL
-    
+
     init(displayText: String, innerLink: String) {
         link = URL(string: innerLink)!
         text = displayText
     }
-    
+
     var body: some View {
         HStack {
             Link(text, destination: link)
                 .foregroundColor(.primary)
-                
+
             Spacer()
-                
+
             Image(systemName: "chevron.right")
                 .foregroundColor(.gray)
         }
@@ -34,19 +34,19 @@ struct ListRowTextView: View {
     private var leftText: String
     private var rightText: String?
     private var rightSymbol: String?
-    
+
     init(leftText: String, rightText: String?, rightSymbol: String?) {
         self.leftText = leftText
         self.rightText = rightText
         self.rightSymbol = rightSymbol
     }
-    
+
     var body: some View {
         HStack {
             Text(leftText)
-                
+
             Spacer()
-            
+
             if let rightText = rightText {
                 Text(rightText)
             } else {

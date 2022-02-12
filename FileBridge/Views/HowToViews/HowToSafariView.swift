@@ -10,14 +10,14 @@ import SwiftUI
 
 struct HowToSafariView: View {
     private let player = AVPlayer(url: URL(string: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")!)
-    
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("This guide is to change the download location for Safari.")
-                    
+
                 Text("Here are the steps:")
-                    
+
                 NumberedListView([
                     "Open settings",
                     "Navigate to the Safari menu",
@@ -28,12 +28,11 @@ struct HowToSafariView: View {
                     "Select done",
                     "Exit settings"
                 ])
-                
-                
+
                 Text("Here's a video for the process in action:")
-                
+
                 VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/Safari-downloads.mp4")
-                
+
                 Spacer()
             }
             .padding()

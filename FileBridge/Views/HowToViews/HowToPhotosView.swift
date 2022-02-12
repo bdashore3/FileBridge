@@ -14,18 +14,18 @@ struct HowToPhotosView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("This guide is for transferring a single photo or video in its original quality.")
-                    
+
                 Text("Here are the steps:")
-                    
+
                 NumberedListView([
                     "Open the photos app",
                     "Open the photo/video you want to transfer",
                     "Click the share button",
                     "Select Save to files",
                     "In the popup, select FileBridge",
-                    "Follow the copy general files tutorial and copy the photo just like any other file",
+                    "Follow the copy general files tutorial and copy the photo just like any other file"
                 ])
-                
+
                 Button {
                     showSheet = true
                 } label: {
@@ -43,9 +43,9 @@ struct HowToPhotosView: View {
                 .sheet(isPresented: $showSheet, content: {
                     HowToShareSheetView()
                 })
-                
+
                 Text("Here's a video for the process in action:")
-                
+
                 VideoView(urlInput: "https://files.kingbri.dev/.public-app-assets/FileBridge/Photo-share.mp4")
 
                 Spacer()

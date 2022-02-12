@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 struct PseudoFsView: View {
     // Checks if the user is using PseudoFS
     @AppStorage("usingPseudoFs") var usingPseudoFs: Bool = false
-    
+
     // Binds to MainView's state var
     @Binding var showProgressView: Bool
 
@@ -28,7 +28,7 @@ struct PseudoFsView: View {
 
     // If there's an error
     @State private var errorSheetString: String = "Nothing here yet"
-    
+
     // View for PseudoFS
     var body: some View {
         VStack {
@@ -36,10 +36,10 @@ struct PseudoFsView: View {
                 .font(.largeTitle)
                 .padding()
                 .foregroundColor(.blue)
-            
-            VStack (alignment: .leading, spacing: 15) {
+
+            VStack(alignment: .leading, spacing: 15) {
                 Text("This feature migrates your files to the FileBridge folder for even easier transfer.")
-                
+
                 Spacer()
 
                 Text("To set up PseudoFS, please follow the instructions in the Guides tab.")
@@ -48,11 +48,11 @@ struct PseudoFsView: View {
                     "If the button says \"Import\", follow the import guide.",
                     "If the button says \"Restore\", follow the restoration guide."
                 ])
-                
+
                 Spacer()
             }
             .padding()
-            
+
             Toggle(isOn: $isCopying, label: {
                 Text("Safely copy my files")
             })
@@ -62,7 +62,7 @@ struct PseudoFsView: View {
             .toggleStyle(SwitchToggleStyle(tint: .blue))
             .animation(.easeInOut, value: isCopying)
             .onChange(of: isCopying) { _ in
-                if !isCopying && !usingPseudoFs {
+                if !isCopying, !usingPseudoFs {
                     showWarnAlert = true
                 }
             }
@@ -79,19 +79,19 @@ struct PseudoFsView: View {
                     title: Text("Are you sure?"),
                     message: Text("Please make sure to restore before uninstalling the app otherwise the FileBridge folder will be deleted!"),
                     primaryButton: .destructive(Text("Proceed")),
-                    secondaryButton: .cancel() {
+                    secondaryButton: .cancel {
                         isCopying = true
                     }
                 )
             }
             .disabled(usingPseudoFs == true)
-            
+
             Spacer(minLength: 20)
-            
+
             // Dynamically switch between import and restore
             Button {
                 showMoveAlert = true
-                
+
                 if !usingPseudoFs {
                     isImporting = true
                 }
@@ -118,7 +118,7 @@ struct PseudoFsView: View {
             }
 
             Spacer()
-            
+
             HStack {
                 Text("PseudoFS is")
                 Text(usingPseudoFs ? "Enabled" : "Disabled")
@@ -132,9 +132,8 @@ struct PseudoFsView: View {
                     dismissButton: .default(Text("Got it!"))
                 )
             }
-            
+
             Spacer(minLength: 30)
-            
         }
         .actionSheet(isPresented: $showErrorSheet) {
             ActionSheet(
@@ -149,21 +148,21 @@ struct PseudoFsView: View {
             allowsMultipleSelection: false
         ) { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 errorSheetString = error.localizedDescription
                 showErrorSheet = true
-            case .success(let urls):
+            case let .success(urls):
                 showProgressView = true
-                
+
                 let group = DispatchGroup()
                 group.enter()
-                
+
                 DispatchQueue.global(qos: .userInitiated).async {
                     handleFileResult(urls: urls)
 
                     group.leave()
                 }
-                
+
                 group.notify(queue: DispatchQueue.main) {
                     isImporting = false
                     isCopying = usingPseudoFs ? false : true
@@ -171,30 +170,27 @@ struct PseudoFsView: View {
             }
         }
     }
-    
+
     func handleFileResult(urls: [URL]) {
         guard let documentsDirectory = urls.first else { return }
-    
+
         let pseudoUtils = PseudoFsUtils(documentsDirectory, isImporting, isCopying)
         do {
             try pseudoUtils.prepCopying()
-            
+
             sleep(2)
             showProgressView = false
             showSuccessAlert = true
-            
+
             usingPseudoFs = isImporting ? true : false
-        }
-        catch {
+        } catch {
             switch error {
             case PseudoFsError.invalidDirectory:
                 errorSheetString = "Please select the On my iPhone directory!"
-                break
             case StringRendererError.noPercentRemoval:
                 errorSheetString = "Something went wrong when creating the directory string. The error is below \n\n \(error)"
             default:
                 errorSheetString = "The error is logged below \n\n \(error)"
-                break
             }
 
             sleep(2)

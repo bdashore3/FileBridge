@@ -17,7 +17,7 @@ enum Tab {
 struct MainView: View {
     @State var tabSelection: Tab = .home
     @State var showProgressView = false
-    
+
     // Shows tabs on bottom of the screen
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -44,7 +44,6 @@ struct MainView: View {
         }
         .blur(radius: showProgressView ? 2 : 0)
         .overlay(ProgressOverlayView(isShowing: $showProgressView))
-        
     }
 }
 

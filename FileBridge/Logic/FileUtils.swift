@@ -13,13 +13,13 @@ class FileUtils {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-    
+
     // Add an empty text document to show the folder
     func addEmptyText() {
         let str = "Do not delete this file!"
 
         let url = FileUtils.getAppDirectory().appendingPathComponent("doNotDelete.txt")
-        
+
         do {
             try str.write(to: url, atomically: true, encoding: .utf8)
         } catch {

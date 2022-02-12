@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProgressOverlayView: View {
     @Binding var isShowing: Bool
-    
+
     // Show a progress view that blocks all UI elements
     var body: some View {
         ZStack {
@@ -17,7 +17,7 @@ struct ProgressOverlayView: View {
                 Color(UIColor.systemBackground)
                     .ignoresSafeArea()
                     .opacity(0.75)
-                
+
                 VStack {
                     ProgressView()
                         .scaleEffect(2.0, anchor: .center)

@@ -16,11 +16,11 @@ class StringRenderer {
     func getCheckString(input: String) throws -> String {
         var inputArray = input.components(separatedBy: "/")
         inputArray.removeAll(where: { $0 == "" })
-        
+
         guard let cutString = inputArray.last!.removingPercentEncoding else {
             throw StringRendererError.noPercentRemoval
         }
-        
+
         return cutString
     }
 }

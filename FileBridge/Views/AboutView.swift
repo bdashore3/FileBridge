@@ -9,19 +9,19 @@ import SwiftUI
 
 struct AboutView: View {
     @State private var showDisclaimer = false
-    
+
     var body: some View {
         VStack {
             Text("About")
                 .font(.largeTitle)
                 .padding()
                 .foregroundColor(.blue)
-            
+
             Image("AppImage")
                 .resizable()
                 .frame(width: 100, height: 100)
                 .cornerRadius(25)
-            
+
             Text("FileBridge is a free and open source file transfer application developed by Brian Dashore under the Apache-2.0 license.")
                 .padding()
 
@@ -36,9 +36,9 @@ struct AboutView: View {
                     .sheet(isPresented: $showDisclaimer) {
                         DisclaimerView()
                     }
-                    
+
                     Spacer()
-                    
+
                     Image(systemName: "chevron.right")
                         .foregroundColor(.gray)
                 }
@@ -47,7 +47,7 @@ struct AboutView: View {
                 ListRowLinkView(displayText: "Discord Support", innerLink: "https://discord.gg/pswt7by")
             }
             .listStyle(InsetGroupedListStyle())
-            
+
             Spacer()
         }
     }

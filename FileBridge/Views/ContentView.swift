@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var tab: Tab
-    
+
     @State private var showAlert = false
-    
+
     // First page view
     var body: some View {
         VStack {
@@ -22,17 +22,17 @@ struct ContentView: View {
             }
             .font(.largeTitle)
             .padding()
-            
+
             Text("This app allows you to easily transfer files with nothing but a lightning cable and iTunes or Finder.")
                 .padding()
                 .font(.title2)
                 .multilineTextAlignment(.center)
-            
+
             Spacer()
-            
+
             Text("Getting Started or need help?")
                 .font(.title2)
-            
+
             Button {
                 tab = Tab.howto
             } label: {
@@ -48,36 +48,36 @@ struct ContentView: View {
             )
             .frame(maxWidth: .infinity, alignment: .center)
             .padding()
-            
-            
+
             Spacer()
-            
-            VStack (alignment: .center) {
+
+            VStack(alignment: .center) {
                 Text("Missing the FileBridge folder in files?")
                 Text("Click the button.")
             }
-                Button {
-                    FileUtils().addEmptyText()
-                    
-                    showAlert = true
-                } label: {
-                    Text("Recover folder")
-                        .padding(20)
-                        .foregroundColor(.blue)
-                        .font(.title3)
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(
-                        title: Text("Folder regenerated"),
-                        message: Text("Check your files app. \n\n Your FileBridge folder should have reappeared."),
-                        dismissButton: .default(Text("Got it!")))
-                }
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.gray)
-                        .opacity(0.2)
+            Button {
+                FileUtils().addEmptyText()
+
+                showAlert = true
+            } label: {
+                Text("Recover folder")
+                    .padding(20)
+                    .foregroundColor(.blue)
+                    .font(.title3)
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Folder regenerated"),
+                    message: Text("Check your files app. \n\n Your FileBridge folder should have reappeared."),
+                    dismissButton: .default(Text("Got it!"))
                 )
-                .padding(.bottom, 30)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.gray)
+                    .opacity(0.2)
+            )
+            .padding(.bottom, 30)
         }
     }
 }
