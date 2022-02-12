@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C6822B027B759C200D27B68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822AF27B759C200D27B68 /* ContentView.swift */; };
-		0C6822B227B75A2200D27B68 /* TaskExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B127B75A2200D27B68 /* TaskExtension.swift */; };
 		0C6822B427B75B6C00D27B68 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */; };
 		0C6822BA27B7687500D27B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BA26151571003FAD1F /* Assets.xcassets */; };
+		0C6822BC27B770B300D27B68 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822BB27B770B300D27B68 /* Task.swift */; };
+		0C6822BD27B770C500D27B68 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822BB27B770B300D27B68 /* Task.swift */; };
 		0C92449027B7596F0089BFF7 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7FFA0327B6BFD80003E5B3 /* Messages.framework */; };
 		0C92449327B7596F0089BFF7 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92449227B7596F0089BFF7 /* MessagesViewController.swift */; };
 		0C92449627B7596F0089BFF7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92449427B7596F0089BFF7 /* MainInterface.storyboard */; };
@@ -36,7 +37,7 @@
 		7CBA96BE26151571003FAD1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BD26151571003FAD1F /* Preview Assets.xcassets */; };
 		7CBA96C926151571003FAD1F /* FileBridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96C826151571003FAD1F /* FileBridgeTests.swift */; };
 		7CBA96D426151571003FAD1F /* FileBridgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA96D326151571003FAD1F /* FileBridgeUITests.swift */; };
-		7CDDBE49263653C600F302A4 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBE48263653C600F302A4 /* ViewExtensions.swift */; };
+		7CDDBE49263653C600F302A4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBE48263653C600F302A4 /* UIApplication.swift */; };
 		7CDDBE4B2636547600F302A4 /* ListRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBE4A2636547600F302A4 /* ListRowViews.swift */; };
 		7CDDBE4D2636561100F302A4 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBE4C2636561100F302A4 /* DisclaimerView.swift */; };
 		7CDDBE59263720BE00F302A4 /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBE58263720BE00F302A4 /* HowToView.swift */; };
@@ -82,8 +83,8 @@
 
 /* Begin PBXFileReference section */
 		0C6822AF27B759C200D27B68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0C6822B127B75A2200D27B68 /* TaskExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExtension.swift; sourceTree = "<group>"; };
 		0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0C6822BB27B770B300D27B68 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		0C7FFA0327B6BFD80003E5B3 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		0C92448F27B7596F0089BFF7 /* MessageExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C92449227B7596F0089BFF7 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +117,7 @@
 		7CBA96CF26151571003FAD1F /* FileBridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileBridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBA96D326151571003FAD1F /* FileBridgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBridgeUITests.swift; sourceTree = "<group>"; };
 		7CBA96D526151572003FAD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CDDBE48263653C600F302A4 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		7CDDBE48263653C600F302A4 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		7CDDBE4A2636547600F302A4 /* ListRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowViews.swift; sourceTree = "<group>"; };
 		7CDDBE4C2636561100F302A4 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		7CDDBE58263720BE00F302A4 /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 				0C92449427B7596F0089BFF7 /* MainInterface.storyboard */,
 				0C92449927B759700089BFF7 /* Info.plist */,
 				0C6822AF27B759C200D27B68 /* ContentView.swift */,
-				0C6822B127B75A2200D27B68 /* TaskExtension.swift */,
 				0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */,
 			);
 			path = MessageExt;
@@ -267,7 +267,8 @@
 		7CDDBE47263653B600F302A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7CDDBE48263653C600F302A4 /* ViewExtensions.swift */,
+				7CDDBE48263653C600F302A4 /* UIApplication.swift */,
+				0C6822BB27B770B300D27B68 /* Task.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,7 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C6822B427B75B6C00D27B68 /* ContentViewModel.swift in Sources */,
-				0C6822B227B75A2200D27B68 /* TaskExtension.swift in Sources */,
+				0C6822BD27B770C500D27B68 /* Task.swift in Sources */,
 				0C6822B027B759C200D27B68 /* ContentView.swift in Sources */,
 				0C92449327B7596F0089BFF7 /* MessagesViewController.swift in Sources */,
 			);
@@ -472,10 +473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CDDBE49263653C600F302A4 /* ViewExtensions.swift in Sources */,
+				7CDDBE49263653C600F302A4 /* UIApplication.swift in Sources */,
 				7CBA96B926151570003FAD1F /* ContentView.swift in Sources */,
 				7CB36AB62624F892002D2D48 /* MainView.swift in Sources */,
 				7C4AC031263AE3E20029C70D /* HowToPhotosView.swift in Sources */,
+				0C6822BC27B770B300D27B68 /* Task.swift in Sources */,
 				7C0C13AB263998C300A078CF /* HowToSafariView.swift in Sources */,
 				7C4AC033263AE75D0029C70D /* HowToShareView.swift in Sources */,
 				7C2A5029263512550004842C /* AboutView.swift in Sources */,
