@@ -11,11 +11,13 @@
       "size" : "29x29"
     },
     {
+      "filename" : "imessageext-120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x45"
     },
     {
+      "filename" : "imessageext-180-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x45"
@@ -26,11 +28,13 @@
       "size" : "29x29"
     },
     {
+      "filename" : "imessageext-134.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "67x50"
     },
     {
+      "filename" : "imessageext-148.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "74x55"
@@ -41,24 +45,28 @@
       "size" : "1024x1024"
     },
     {
+      "filename" : "imessageext-54.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "27x20"
     },
     {
+      "filename" : "imessageext-81.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "27x20"
     },
     {
+      "filename" : "imessageext-64.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "32x24"
     },
     {
+      "filename" : "imessageext-96.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",

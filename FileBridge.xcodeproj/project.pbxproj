@@ -10,10 +10,10 @@
 		0C6822B027B759C200D27B68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822AF27B759C200D27B68 /* ContentView.swift */; };
 		0C6822B227B75A2200D27B68 /* TaskExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B127B75A2200D27B68 /* TaskExtension.swift */; };
 		0C6822B427B75B6C00D27B68 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6822B327B75B6C00D27B68 /* ContentViewModel.swift */; };
+		0C6822BA27B7687500D27B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBA96BA26151571003FAD1F /* Assets.xcassets */; };
 		0C92449027B7596F0089BFF7 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7FFA0327B6BFD80003E5B3 /* Messages.framework */; };
 		0C92449327B7596F0089BFF7 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92449227B7596F0089BFF7 /* MessagesViewController.swift */; };
 		0C92449627B7596F0089BFF7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92449427B7596F0089BFF7 /* MainInterface.storyboard */; };
-		0C92449827B759700089BFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C92449727B759700089BFF7 /* Assets.xcassets */; };
 		0C92449C27B759700089BFF7 /* MessageExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0C92448F27B7596F0089BFF7 /* MessageExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7C07486A2617CB9500AFAE79 /* InitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0748692617CB9500AFAE79 /* InitUtils.swift */; };
 		7C0C13AB263998C300A078CF /* HowToSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C13AA263998C300A078CF /* HowToSafariView.swift */; };
@@ -88,7 +88,6 @@
 		0C92448F27B7596F0089BFF7 /* MessageExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C92449227B7596F0089BFF7 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		0C92449527B7596F0089BFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		0C92449727B759700089BFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C92449927B759700089BFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0748692617CB9500AFAE79 /* InitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUtils.swift; sourceTree = "<group>"; };
 		7C0C13AA263998C300A078CF /* HowToSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToSafariView.swift; sourceTree = "<group>"; };
@@ -169,7 +168,6 @@
 			children = (
 				0C92449227B7596F0089BFF7 /* MessagesViewController.swift */,
 				0C92449427B7596F0089BFF7 /* MainInterface.storyboard */,
-				0C92449727B759700089BFF7 /* Assets.xcassets */,
 				0C92449927B759700089BFF7 /* Info.plist */,
 				0C6822AF27B759C200D27B68 /* ContentView.swift */,
 				0C6822B127B75A2200D27B68 /* TaskExtension.swift */,
@@ -428,7 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C92449827B759700089BFF7 /* Assets.xcassets in Resources */,
+				0C6822BA27B7687500D27B68 /* Assets.xcassets in Resources */,
 				0C92449627B7596F0089BFF7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +547,7 @@
 		0C92449D27B759700089BFF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = MessageExtIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -578,7 +576,7 @@
 		0C92449E27B759700089BFF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = MessageExtIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
