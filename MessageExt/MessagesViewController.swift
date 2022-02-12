@@ -24,53 +24,6 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.didMove(toParent: self)
 
         NSLayoutConstraint.activate([
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])

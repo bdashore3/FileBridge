@@ -11,7 +11,7 @@ import Messages
 @MainActor
 class ContentViewModel: ObservableObject {
     internal var parentMessageController: MSMessagesAppViewController
-    @Published var showFileImporter: Bool = true
+    @Published var showFileImporter: Bool = false
     @Published var showErrorAlert: Bool = false
     @Published var errorDescription: String = ""
 

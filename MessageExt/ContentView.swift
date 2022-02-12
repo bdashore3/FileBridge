@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         Button("Attach files") {
-            viewModel.showFileImporter = true
+            viewModel.showFileImporter.toggle()
         }
         .alert(isPresented: $viewModel.showErrorAlert) {
             Alert(
@@ -36,6 +36,9 @@ struct ContentView: View {
                     await viewModel.showError(description: error.localizedDescription)
                 }
             }
+        }
+        .onAppear {
+            viewModel.showFileImporter.toggle()
         }
     }
 }
