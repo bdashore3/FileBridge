@@ -53,6 +53,7 @@ struct HowToView: View {
             .navigationTitle("How-to")
             .navigationBarHidden(true)
         }
+        .navigationViewStyle(.stack)
     }
 }
 
