@@ -9,17 +9,12 @@ import SwiftUI
 
 // View alias for a list row with an external link
 struct ListRowLinkView: View {
-    private var text: String
-    private var link: URL
-
-    init(displayText: String, innerLink: String) {
-        link = URL(string: innerLink)!
-        text = displayText
-    }
+    let text: String
+    let link: String
 
     var body: some View {
         HStack {
-            Link(text, destination: link)
+            Link(text, destination: URL(string: link)!)
                 .foregroundColor(.primary)
 
             Spacer()
@@ -31,15 +26,9 @@ struct ListRowLinkView: View {
 }
 
 struct ListRowTextView: View {
-    private var leftText: String
-    private var rightText: String?
-    private var rightSymbol: String?
-
-    init(leftText: String, rightText: String?, rightSymbol: String?) {
-        self.leftText = leftText
-        self.rightText = rightText
-        self.rightSymbol = rightSymbol
-    }
+    let leftText: String
+    var rightText: String?
+    var rightSymbol: String?
 
     var body: some View {
         HStack {

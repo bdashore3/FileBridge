@@ -26,8 +26,9 @@ struct AboutView: View {
                 .padding()
 
             List {
-                ListRowTextView(leftText: "Version", rightText: UIApplication.appVersion(), rightSymbol: nil)
-                ListRowTextView(leftText: "Build Number", rightText: UIApplication.appBuild(), rightSymbol: nil)
+                ListRowTextView(leftText: "Version", rightText: UIApplication.appVersion())
+                ListRowTextView(leftText: "Build number", rightText: UIApplication.appBuild())
+                ListRowTextView(leftText: "Build type", rightText: UIApplication.buildType())
                 HStack {
                     Button("Disclaimer") {
                         showDisclaimer = true
@@ -42,9 +43,9 @@ struct AboutView: View {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.gray)
                 }
-                ListRowLinkView(displayText: "Website", innerLink: "https://kingbri.dev/filebridge")
-                ListRowLinkView(displayText: "GitHub Repository", innerLink: "https://github.com/bdashore3/FileBridge")
-                ListRowLinkView(displayText: "Discord Support", innerLink: "https://discord.gg/pswt7by")
+                ListRowLinkView(text: "App website", link: "https://kingbri.dev/filebridge")
+                ListRowLinkView(text: "GitHub repository", link: "https://github.com/bdashore3/FileBridge")
+                ListRowLinkView(text: "Discord support", link: "https://discord.gg/pswt7by")
             }
             .listStyle(InsetGroupedListStyle())
 
